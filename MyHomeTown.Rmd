@@ -1,0 +1,26 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+library(leaflet)
+```
+
+## My Home Town
+
+### This document is created at the 29th May 2018. 
+
+The following map shows my native town and position of the university, where I studied at. Please, be patient and wait while the map is loading. You can click at the marker of my university to see a link to the English version of it's Web-site.
+
+```{r}
+leaflet() %>%
+    addTiles() %>%
+    addRectangles(lat1 = 57.764901, lng1 = 39.630728, 
+                  lat2 = 57.515983, lng2 = 40.066062) %>%
+    addMarkers(lat = 57.632799, lng = 39.887233,
+               popup = "<div><div style='width: 128px;margin: 0 auto'><img src='http://www.uniyar.ac.ru/upload/en/yarsu_logo.png'></div><div style='margin-top: 10px'><a href='http://www.uniyar.ac.ru/en/'>P.G. Demidov Yaroslavl State University</a></div></div>")
+```
